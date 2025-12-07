@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="gallery-container">
+    <h1>Gallery</h1>
+    <div class="gallery">
+        {% for object in gallerymodel %}
+        <div class="gallery-item">
+            <a href="{{object.image_file.url}}"><img src="{{ object.image_file.url }}" alt="image" /></a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

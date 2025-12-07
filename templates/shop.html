@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section>
+    
+    <div class="shop-container ">
+        
+        <div class="shop-header">
+            
+         <h2>Products</h2>
+         
+         <!--  Searchbar for shop section  -->    
+            <div class="searchbar">
+                <form class="search_form" action="{% url 'search' %}" method="GET">
+                    <input class="search_field" name="search_input" autocomplete="0ff" type="text" placeholder="Search Product">
+                    <button class="submit_btn" type="submit" ><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+        </div>
+        
+        {% if message %}
+                
+                <div class="alert-msg alert alert-{{ message.tags }}">{{ message }}<a class="clear-search" href="{% url 'shop' %}"><i class="fa-regular fa-trash-can fa-sm"></i></a></div>
+        {% endif %}
+        <button class="back_button" onclick="window.history.back()"><i class="fa-solid fa-arrow-left"></i></button>
+        <!--products display -->
+        {% block product-view %}
+
+        {% endblock %}
+        {% if searched_product %}
+        <div class="shop_message_title">Search for "{{ user_request }} "<a class="clear-search" href="{% url 'shop' %}"><i class="fa-regular fa-trash-can fa-sm"></i></a></div>
+        
+           <div class="shop-search">
+                {% for object in searched_product %}
+                    <a href="{% url 'product-view' object.id %}" class="shop-item">
+                        <img  src="{{ object.Product_Image.url }}" alt="image">
+                        <div class="item-spec">
+                            <p>Model no : {{ object.Model_No }}</p>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+            <h2 class="more_products_title">More products</h2>
+        {% endif %}
+        <div class="shop">
+        {% if pro_by_cat %}
+                {% for object in pro_by_cat %}
+                    <a href="{% url 'product-view' object.id %}" class="shop-item">
+                        <img  src="{{ object.Product_Image.url }}" alt="image">
+                        <div class="item-spec">
+                           <p>Model no : {{ object.Model_No }}</p>
+                        </div>
+                    </a>
+                {% endfor %}
+        {% else %}
+                {% for object in products %}
+                    <a href="{% url 'product-view' object.id %}" class="shop-item">
+                        <img  src="{{ object.Product_Image.url }}" alt="image">
+                        <div class="item-spec">
+                           <p>Model no : {{ object.Model_No }}</p>
+                        </div>
+                    </a>
+                 {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+{% endblock %}

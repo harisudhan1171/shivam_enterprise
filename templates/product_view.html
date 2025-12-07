@@ -1,0 +1,44 @@
+{% extends 'shop.html' %}
+{% load static %}
+{% block product-view %}
+<section>
+    <div class="product-view-container">
+        <div class="product-display-section">
+            <div class="product-item">
+                <img class="product-image" src="{{ specific_product.Product_Image.url }}" alt="product image">
+                <div class="product-spec">
+                    
+                    <div class="product-spec-title">{{ specific_product.Model_No }}</div>
+                    <div class="spec-price"><span>₹</span> 19500 <sub>-10%</sub></div>
+                    <div class="spec-container">
+                        
+                        <div class="spec"><p>Color</p>:<span>{{ specific_product.Color }}</span></div>
+                        <div class="spec"><p>Size</p>:<span>{{ specific_product.Size }}</span></div>
+                        <div class="spec"><p>Material</p>:<span>{{ specific_product.Material }}</span></div>
+                        <div class="spec"><p>Thickness</p>:<span>{{ specific_product.Material }}</span></div>
+                        <div class="spec"><p>Finish</p>:<span>{{ specific_product.Material }}</span></div>
+                        {% if specific_product.Description %}
+                        <div class="spec"><p>description</p>:<span>{{specific_product.Description}}</span></div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+</section>
+<h2 class="related-pro-title">Related products....</h2>
+        <div class="related-products">
+            <div class="shop-search">
+                {% for object in related_products %}
+                    <a href="{% url 'product-view' object.id %}" class="shop-item">
+                        <img  src="{{ object.Product_Image.url }}" alt="image">
+                        <div class="item-spec">
+                           <p>Model no : {{ object.Model_No }}</p>
+                        </div>
+                    </a>
+                 {% endfor %}
+            </div>
+        </div>
+
+{% endblock %}

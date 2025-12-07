@@ -1,0 +1,252 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!--banner-->
+<section>
+   <div class="c-banner" loading="lazy">
+      <div class="c-title">
+         <h3 >Premium</h3>
+         <h2 >Wooden Doors</h2>
+         <p >High-Quality Wooden Doors | Imported Skin Doors | Windows | Handle Locks | Glasses | Accessories | Hardwares</p>
+         <div class="social-mediaicons">
+            <!-- Facebook -->
+            <a href="#" type="button" class="fab fa-facebook-f text-white" ></a>
+            <!-- instagram -->
+            <a type="button" class="fab fa-instagram text-white" ></a>
+            <!-- x -->
+            <a href="mailto:sivamenterprisetup@gmail.com" type="button" class="fa solid fa-envelope text-white" ></a>
+            <!-- map -->
+            <a href="https://maps.app.goo.gl/u1c8iwifTWAJGFbRA" type="button" class="fa-solid fa-location-dot text-white" ></a>
+          </div>
+      </div>
+      <div class="banner-video">
+        <video oncontextmenu="event.preventDefault()" src="{% static 'images/banner-video.mp4' %}" autoplay loop muted></video>
+      </div>
+   </div>
+</section>
+<!--banner-->
+<section>
+  <h2 class="featured-product-title">Featured products</h2>
+  <hr>
+  <div class="explore">
+    <h2>Categories</h2>
+        <a>Explore more products <strong>&#10095;&#10095;</strong></a>
+      </div>
+  <div class="slider-container">
+    
+    <button class="prev">&#10094;</button>
+    <div class="overflow-control">
+      <div class="slider-track" id="sliderTrack">
+        {% for object in all_category %}
+        <a href="{% url 'category' object.id %}" class="slide">
+              <img src="{{ object.Category_Image.url }}" alt="category image">
+              <h3>{{object.Category_Name}}</h3>
+          </a>
+        {% empty %}
+        <h2>NO Categories are Available....</h2>
+        {% endfor %}
+      </div>
+      
+    </div>
+    
+    <button class="next">&#10095;</button>
+  </div>  
+</section>
+<hr>
+<!--About-->
+<section id="about">
+
+  <div class="info-container">
+
+    <section class="about-section">
+
+        <h1>About Us</h1>
+
+        <div class="about-block">
+
+          <img src="{% static 'images/varity of designs.webp' %}" alt="Variety of Designs" class="about-img wide" />
+
+          <div class="about-text">
+
+            <h2>Variety of Designs</h2>
+
+            <p>We offer a wide range of design styles—from traditional motifs to modern minimalism. Our creative team ensures every piece reflects your personality and taste.</p>
+
+          </div>
+
+        </div>
+
+        <div class="about-block reverse">
+
+          <img src="{% static 'images\carving.webp' %}" alt="High-Tech Carving" class="about-img tall" />
+
+          <div class="about-text">
+
+            <h2>High-Tech Carving</h2>
+
+            <p>Using advanced CNC and laser carving technology, we bring precision and detail to every product. Our hi-tech process guarantees flawless finishes and intricate patterns.</p>
+
+          </div>
+
+        </div>
+
+        <div class="about-block">
+
+          <img src="{% static 'images/ownManufacturing.webp' %}" alt="Own Manufacturing" class="about-img square" />
+
+          <div class="about-text">
+
+            <h2>Own Manufacturing</h2>
+
+            <p>From raw materials to final packaging, everything is crafted in-house. This allows us to maintain quality, reduce waste, and deliver faster without compromise.</p>
+
+          </div>
+
+        </div>
+
+        <div class="about-block reverse">
+
+          <img src="{% static 'images/customizeimage.webp' %}" alt="Customizable" class="about-img wide" />
+
+          <div class="about-text">
+
+            <h2>Customizable</h2>
+
+            <p>Choose your colors, materials, and finishes. We make it easy to personalize every detail so your product feels truly yours.</p>
+
+          </div>
+
+      </div>
+
+  </section>
+    <div class="msg-container">
+      <h1 class="msg-container-title">Your perfect door is just a click away. Explore our collection!</h1>
+      <a class="msg-container-button" type="button" href="{% url 'shop' %}">Explore</a>
+    </div>
+  <div class="info">  
+      <div class="info-box">
+        <ul class="info-content">
+          <h2>Benifit of Choosing us</h2>
+          <li><b>Trusted Expertise :</b> <br>Our skilled professionals ensure Top-quality results every time.</li>
+          <li><b>Affordable Pricing :</b><br>Quality service at prices that fit your budget.</li>
+          <li><b>Custom Solution :</b><br>Every client's need is unique we tailor our service to match yours.</li>
+          <li><!--<span>&#9755;</span>--><b>Locally Trusted Brand :</b><br>Build on trust and Long-Term Relationship. </li>
+        <ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!--About-->
+
+<!--reviews-->
+<section class="reviews-container">
+  <div class="elfsight-app-99143025-5806-49ef-a02d-41ae5ae8b53b" data-elfsight-app-lazy></div>
+  <div class="locateus">
+        <h3>Locate Us <span class="fas fa-map-pin"></span></h3>
+           <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1011.6431167536964!2d77.3694061!3d11.1828191!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba90500649f8145%3A0xdbbcaed2f9f43aaf!2sSHIVAM%20ENTERPRISE!5e1!3m2!1sen!2sin!4v1762872583116!5m2!1sen!2sin" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  
+      </div>
+</section>
+
+<!--this secction about frequently asked questions and user contact form-->
+<section class="faq-container">
+<div class="faq-item-container">
+  <h1>Frequently Asked Questions ?</h1>
+  <div class="faq-item">
+    <div class="faq-question">
+      <span><strong>1. What type of wood do you use for your doors?</strong></span>
+      <span class="arrow "><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="24px" fill="#e3"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg></span>
+    </div>
+    <div class="faq-answer">
+      We use high-quality seasoned hardwoods such as teak, sal, and country wood, chosen for their strength, natural beauty, and resistance to wear. 
+      Each wood type is carefully selected based on the customer’s needs and budget.
+    </div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">
+      <span><strong>2. How do you ensure durability and resistance to termites or moisture?</strong></span>
+      <span class="arrow"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="24px" fill="#e3"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg></span>
+    </div>
+    <div class="faq-answer">
+      Our doors and Frames are treated with industry-grade anti-termite  solutions. We also use seasoned wood that has been properly dried to prevent warping, cracking, or fungal growth. 
+      Protective coatings and sealants further enhance longevity.
+    </div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">
+      <span><strong>3. Do you offer custom sizes or designs?</strong></span>
+      <span class="arrow"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="24px" fill="#e3"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg></span>
+    </div>
+    <div class="faq-answer">
+      Yes, we specialize in custom solutions. Whether you need a unique size, carved patterns, or specific finishes, we’ll craft doors to match your exact requirements
+    </div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">
+      <span><strong>4. What are the standard sizes you offer?</strong></span>
+      <span class="arrow"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="24px" fill="#e3"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg></span>
+    </div>
+    <div class="faq-answer">
+      <span>Doors</span>
+      <ul>
+        <li>Main doors: 3 ft x 6 ¾ ft</li>
+        <li>Room doors: 2 ¾ ft x 6 ¾ ft</li>
+        <li>Bathroom doors: 2 ½ ft x 6 ½ ft</li>
+      </ul>
+      <span>Frames</span>
+      <ul>
+        <li>Main doors Frame: 5 ft x 7 ft, 3½ ft x 7 ft </li>
+        <li>Room doors Frame: 3 ft x 7 ft, 3 ¼ ft x 7 ft</li>
+      </ul>
+      <span>Custom dimensions are available on request.</span>
+    </div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">
+      <span><strong>5. Are there any budget-friendly options without compromising quality?</strong></span>
+      <span class="arrow"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="24px" fill="#e3"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg></span>
+    </div>
+    <div class="faq-answer">
+      Absolutely. We offer a range of affordable doors made from durable country wood  that maintain quality and aesthetics while staying within budget.
+    </div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">
+      <span><strong>6. Do you offer discounts for bulk orders or repeat customers?</strong></span>
+      <span class="arrow"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="24px" fill="#e3"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg></span>
+    </div>
+    <div class="faq-answer">
+     Yes, we provide attractive discounts for bulk purchases and returning customers. We value long-term relationships and offer loyalty benefits
+    </div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">
+      <span><strong>7. Do you provide installation services?</strong></span>
+      <span class="arrow"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="24px" fill="#e3"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg></span>
+    </div>
+    <div class="faq-answer">
+      Yes, we offer professional installation services within the local area. Our team ensures proper fitting and finishing for a hassle-free experience
+    </div>
+  </div>
+</div>
+<!--FAQ image-->
+<div class="faq-image">
+  <img src="{% static 'images/FAQ.webp' %}" alt="image">
+</div>
+</section>
+
+<section class="brand-shoutout">
+  <h3>Our Suppliers</h3>
+  <div class="brands-logos">
+    <img src="{% static 'images/Europa logo.webp' %}" alt="logo">
+    <img src="{% static 'images/dneema logo.png' %}" alt="logo">
+    <img src="{% static 'images/kanb logo.png' %}" alt="logo">
+    <img src="{% static 'images/kk doors logo.jpg' %}" alt="logo">
+    <img src="{% static 'images/nexoni logo.jpg' %}" alt="logo">
+    <img id="nrdoor" src="{% static 'images/nr door logo.png' %}" alt="logo">
+    <img src="{% static 'images/pm doors logo.jpg' %}" alt="logo">
+  </div>
+  <p><strong>"We sell genuine Brand products sourced from these verified suppliers."</strong></p>
+</section>
+ 
+{% endblock %}    

@@ -1,0 +1,145 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHIVAM</title>
+    <link rel="icon" href="{% static 'images\favicon.svg' %}" type="image/svg+xml">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+    <link rel="stylesheet" href="{% static 'css/terms&conditions.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <link rel="stylesheet" href="{% static 'css/faq.css' %}">
+    <link rel="stylesheet" href="{% static 'css/shop.css' %}">
+    <link rel="stylesheet" href="{% static 'css/product_view.css' %}">
+    <link rel="stylesheet" href="{% static 'css/productslide.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/9.2.0/mdb.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body >
+<header>
+    <nav class="c-navbar">
+        <div class="c-hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <div class="c-brand">
+            <img src="{% static 'images\logo.svg' %}" alt="logo" height="35px" width="128px">
+
+        </div>  
+        <ul class="c-nav-links">
+            <li><i class="fa-solid fa-house"></i><a href="{% url 'home' %}">Home</a></li>
+            <li><i class="fa-solid fa-cart-shopping"></i><a href="{% url 'shop' %}">Shop</a></li>
+            <li><i class="fa-solid fa-comment-dots"></i><a href="{% url 'home'%}?#contact">Contact</a></li>
+            <li><i class="fa-solid fa-images"></i><a href="{% url 'gallery' %}">Gallery</a></li>
+            <li><i class="fa-solid fa-circle-info"></i><a href="{% url 'home'%}?#about">About</a><li>
+        </ul>
+        <a href="{% url 'admin:index' %}" class="user-login text-black"><i class="fa-solid fa-circle-user fa-xl"></i></a>
+    </nav>
+ 
+</header>
+{% block content %}
+
+{% endblock %}
+<footer class="text-white text-center text-lg-start container-fluid" style="background-color: #000000;">
+
+    <div class="container p-4">
+      <div class="row mt-4">
+        <!--about-->
+        <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4">Company</h5>
+          <ul>
+            <li ><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'terms&conditions' %}">Terms & Conditions</a></li>
+          </ul>
+          <!--social media-->
+          <div class="mt-4">
+            <!-- Facebook -->
+            <a  type="button" class="btn btn-floating  btn-lg"><i class="fab fa-facebook-f text-white "></i></a>
+            <!-- instagram -->
+            <a type="button" class="btn btn-floating  btn-lg"><i class="fab fa-instagram text-white"></i></a>
+            <!-- x -->
+            <a href="mailto:sivamenterprisetup@gmail.com" type="button" class="btn btn-floating  btn-lg"><i class="fa solid fa-envelope text-white"></i></a>
+            <!-- map -->
+            <a href="https://maps.app.goo.gl/u1c8iwifTWAJGFbRA" type="button" class="btn btn-floating  btn-lg"><i class="fa-solid fa-location-dot text-white"></i></a>
+          </div>
+        </div>
+        <!--social media-->
+
+        <!--details-->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4 pb-1">Contact Details</h5>
+          
+          <ul class="fa-ul" style="margin-left: 1.65em;">
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-home"></i></span>
+              <span class="ms-2 ">
+                <span>114, Vavipalayam Main Road,<br>
+                HP Petrol Bunk opp,<br>
+                kannakkampalayam,<br>
+                Tiruppur-641666,<br>
+                Tamilnadu.</span>
+              </span>
+            </li>
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2" >sivamenterprisetup@gmail.com</span>
+            </li>
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">contact no 1</span>
+            </li>
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-print"></i></span><span class="ms-2">contact no 2</span>
+            </li>
+          </ul>
+        </div>
+        <!--details-->
+
+        <!--timing-->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4">Opening hours</h5>
+
+          <table class="table text-center text-white">
+            <tbody class="font-weight-normal">
+              <tr>
+                <td>Mon - Fri</td>
+                <td>8am - 8.30pm</td>
+              </tr>
+              <tr>
+                <td>Sat</td>
+                <td>8am - 7pm</td>
+              </tr>
+              <tr>
+                <td>Sunday</td>
+                <td>Holiday</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--timing-->
+      </div>
+      <!--Grid row-->
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2025 Copyright:
+      <a class="text-white" href="{% url 'home' %}">Shivam Enterprises</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/9.2.0/mdb.umd.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/toggler.js' %}"></script>
+<script src="{% static 'js/productslide.js' %}"></script>
+<script src="https://elfsightcdn.com/platform.js" async></script>
+</body>
+</html>
