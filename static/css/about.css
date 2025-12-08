@@ -220,6 +220,10 @@ li>b{
     background-image: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
     background-blend-mode: lighten;
     border-radius: 40px;
+    transition: all 0.2s ease-in-out;
+}
+.msg-container-button:hover{
+    transform: scale(1.02);
 }
 .brands-logos{
     gap: 10px;
