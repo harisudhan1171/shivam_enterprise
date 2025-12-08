@@ -14,6 +14,7 @@
     
     }
     .featured-product-title{
+        color: #e67e22;
         font-size: clamp(2rem , 2vw, 3rem);
         font-family: var(--serif);
         text-align: center;
@@ -80,6 +81,7 @@
     .prev { left: 10px; }
     .next { right:10px; }
     .explore{
+        color: blue;
         cursor: pointer;
         font-family: var(--serif);
         padding: 0 20px 0 50px ;
@@ -87,12 +89,12 @@
         justify-content: space-between;
         align-items: center;
     a{
-        color: blue;
         text-decoration: none;
         margin: 0;
     }
     }
     .explore h2{
+        color: brown;
         font-size: clamp(1.5rem, 2vw, 2rem);
     }
     
