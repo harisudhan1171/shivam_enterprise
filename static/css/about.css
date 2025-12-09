@@ -16,6 +16,7 @@
     margin: 20px;
     display: flex;
     flex-direction: row;
+    column-gap: 50px;
     justify-content: space-around;
     align-items: center;
 }/*
@@ -273,13 +274,18 @@ iframe{
 }
 }
 .reviews-container{
-    margin: 50px;
+    margin: 0 50px 0 50px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 /* screen size 912*/
+@media(max-width:1150px){
+    .info{
+        flex-direction: column;
+    }
+}
 @media(max-width:912px){
     .reviews-container{
         margin: 25px;
@@ -290,9 +296,6 @@ iframe{
     }
     .reviews{
         width: 100%;
-    }
-    .info{
-        flex-direction: column;
     }
     .info-content{
         width: 100%;
