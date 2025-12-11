@@ -9,14 +9,21 @@
                 <div class="product-spec">
                     
                     <div class="product-spec-title">{{ specific_product.Model_No }}</div>
-                    <div class="spec-price"><span>₹</span> 19500 <sub>-10%</sub></div>
+                    {% if specific_product.Price %}
+                    <div class="spec-price"><span>₹</span> {{ specific_product.Price }} <sub>-10%</sub></div>
+                    {% else %}
+                    <div class="spec-price"><span>₹</span> -- </div>
+                    {% endif %}
                     <div class="spec-container">
-                        
+                        {% if specific_product.Color %}
                         <div class="spec"><p>Color</p>:<span>{{ specific_product.Color }}</span></div>
+                        {% endif %}
                         <div class="spec"><p>Size</p>:<span>{{ specific_product.Size }}</span></div>
                         <div class="spec"><p>Material</p>:<span>{{ specific_product.Material }}</span></div>
-                        <div class="spec"><p>Thickness</p>:<span>{{ specific_product.Material }}</span></div>
-                        <div class="spec"><p>Finish</p>:<span>{{ specific_product.Material }}</span></div>
+                        {% if specific_product.Thickness %}
+                        <div class="spec"><p>Thickness</p>:<span>{{ specific_product.Thickness }}</span></div>
+                        {% endif %}
+                        <div class="spec"><p>Finish</p>:<span>{{ specific_product.Finish }}</span></div>
                         {% if specific_product.Description %}
                         <div class="spec"><p>description</p>:<span>{{specific_product.Description}}</span></div>
                         {% endif %}

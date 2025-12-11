@@ -31,7 +31,7 @@
   <hr>
   <div class="explore">
     <h2>Categories</h2>
-        <a>Explore more products <strong>&#10095;&#10095;</strong></a>
+        <a href="{% url 'shop' %}">Explore more products <strong>&#10095;&#10095;</strong></a>
       </div>
   <div class="slider-container">
     
@@ -137,9 +137,13 @@
 
         <div href="#" id="contact" class="contact-us">
           <h1>Get in Touch</h1>
-          <a href="#" class="contact-item">
+          <a onclick="openWhatsApp()" class="contact-item">
             <div class="thumbnail"><img src="{% static 'images/Whatsapp.svg' %}" alt=""></div>
             <h2>Whatsapp</h2>
+          </a>
+          <a href="mailto:sivamenterprisetup@gmail.com" class="contact-item">
+            <div class="thumbnail"><img src="{% static 'images/gmail.svg' %}" alt=""></div>
+            <h2>Mail</h2>
           </a>
 
           <a href="#" class="contact-item">

@@ -15,32 +15,18 @@ class category(models.Model):
     def __str__(self):
         return self.Category_Name
 
-class Hardware(models.Model):
-    category = models.ForeignKey(category,on_delete= models.CASCADE)
-    Hardware_Image = ResizedImageField(quality = 80,upload_to='static/media/hardware',force_format='WEBP')
-    Finish = models.CharField(null=False,max_length=50)
-    Material = models.CharField(null=False,max_length=50)
-    size = models.CharField(max_length=50)
-    Model_No = models.CharField(null=False,max_length=50)
-    Price = models.FloatField(null=True,blank=True,max_length=10)
-
-    class Meta:
-        verbose_name = "Hardware"
-        verbose_name_plural = "Hardwares"
-
-    def __str__(self):
-        return self.Model_No
     
 
 class products(models.Model):
     category = models.ForeignKey(category,on_delete= models.CASCADE)
     Product_Image = ResizedImageField(quality = 80,upload_to='static/media/product', force_format='WEBP')
-    Color = models.CharField(max_length=50)
+    Color = models.CharField(null=True,blank=True,max_length=50)
     Model_No = models.CharField(max_length=50, null=False, unique=True)
     Size = models.CharField(null=False)
     Material = models.CharField(null=False,max_length=50)
     Finish = models.CharField(null=True,max_length=50)
     Price = models.FloatField(null=True, blank=True,max_length=10)
+    Thickness = models.CharField(null=True, blank=True,max_length=10)
     Description = models.TextField(blank=True,max_length=100)
 
 

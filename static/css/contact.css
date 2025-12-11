@@ -1,4 +1,5 @@
 .contact-us{
+    
     padding: 20px;
     height: -webkit-fill-available;
     display: flex;
@@ -11,12 +12,15 @@ h1{
 }
 }
 .contact-item{
+    border: 1px solid black;
+    cursor: pointer;
     padding: 10px;
     height: 70px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: start;
+    column-gap: 20px;
     width: 250px;
     background-color: wheat;
     border-radius: 35px;
