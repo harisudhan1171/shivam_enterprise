@@ -16,8 +16,8 @@ class ImageAdmin(admin.ModelAdmin):
 
 
 class ProductAdmin(admin.ModelAdmin):
-    search_fields = ['Model_No']
-    list_filter = ['category',]
+    search_fields = ['Model_No','category']
+    list_filter = ['category']
     list_display = ['Model_No', 'Price','category']
 
 admin.site.register(products, ProductAdmin)
