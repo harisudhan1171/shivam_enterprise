@@ -32,6 +32,8 @@
     transform: scale(1.02);
 }
 .product-display-section{
+    border-radius: 15px;
+    background-color: aliceblue;
     width: 90%;
     padding: 40px;
     display: flex;

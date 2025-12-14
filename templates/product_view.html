@@ -8,24 +8,39 @@
                 <img class="product-image" src="{{ specific_product.Product_Image.url }}" alt="product image">
                 <div class="product-spec">
                     
-                    <div class="product-spec-title">{{ specific_product.Model_No }}</div>
+                    <div class="product-spec-title">{{ specific_product.Model_No }}</div>                          <!--Model no-->
                     {% if specific_product.Price %}
-                    <div class="spec-price"><span>₹</span> {{ specific_product.Price }} <sub>-10%</sub></div>
+                    <div class="spec-price"><span>₹</span> {{ specific_product.Price }} <sub>-10%</sub></div>       <!--price-->       
                     {% else %}
-                    <div class="spec-price"><span>₹</span> -- </div>
+                    <div class="spec-price"><span>₹</span> -- </div>                                                  
                     {% endif %}
                     <div class="spec-container">
+                        {% if specific_product.Brand %}
+                        <div class="spec"><p>Brand</p>:<span>{{ specific_product.Brand }}</span></div>                  <!--Brand-->
+                        {% endif %}
+
                         {% if specific_product.Color %}
-                        <div class="spec"><p>Color</p>:<span>{{ specific_product.Color }}</span></div>
+                        <div class="spec"><p>Color</p>:<span>{{ specific_product.Color }}</span></div>                  <!--color-->
                         {% endif %}
-                        <div class="spec"><p>Size</p>:<span>{{ specific_product.Size }}</span></div>
-                        <div class="spec"><p>Material</p>:<span>{{ specific_product.Material }}</span></div>
+                        
+                        {% if specific_product.Size %}
+                        <div class="spec"><p>Size</p>:<span>{{ specific_product.Size }}</span></div>                    <!--size-->
+                        {% endif %}
+
+                        {% if specific_product.Material %}
+                        <div class="spec"><p>Material</p>:<span>{{ specific_product.Material }}</span></div>            <!--material-->
+                        {% endif %}
+
                         {% if specific_product.Thickness %}
-                        <div class="spec"><p>Thickness</p>:<span>{{ specific_product.Thickness }}</span></div>
+                        <div class="spec"><p>Thickness</p>:<span>{{ specific_product.Thickness }}</span></div>          <!--thickness-->
                         {% endif %}
-                        <div class="spec"><p>Finish</p>:<span>{{ specific_product.Finish }}</span></div>
+
+                        {% if specific_product.Finish %}
+                        <div class="spec"><p>Finish</p>:<span>{{ specific_product.Finish }}</span></div>                <!--finish-->
+                        {% endif %}
+
                         {% if specific_product.Description %}
-                        <div class="spec"><p>description</p>:<span>{{specific_product.Description}}</span></div>
+                        <div class="spec"><p>description</p>:<span>{{specific_product.Description}}</span></div>         <!--description-->
                         {% endif %}
                     </div>
                 </div>

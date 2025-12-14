@@ -55,7 +55,7 @@
                 {% endfor %}
         {% else %}
                 {% for object in products %}
-                    <a href="{% url 'product-view' object.id %}" class="shop-item">
+                    <a href="{% url 'product-view' object.slug %}" class="shop-item">
                         <img  src="{{ object.Product_Image.url }}" alt="image">
                         <div class="item-spec">
                            <p>Model no : {{ object.Model_No }}</p>

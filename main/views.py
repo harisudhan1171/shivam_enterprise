@@ -24,8 +24,8 @@ def gallery(request):
     template = loader.get_template('gallery.html')
     return HttpResponse(template.render(context))
 
-def category_view(request,id):
-    get_id = get_object_or_404(category,id=id)
+def category_view(request,slug):
+    get_id = get_object_or_404(category,slug=slug)
     get_product_by_category = products.objects.filter(category_id__exact = get_id)
     context = {
         'pro_by_cat' : get_product_by_category,
@@ -57,8 +57,8 @@ def product_search(request):
             return render(request,'shop.html',context)
     return HttpResponse(template.render(context))
 
-def product_view(request,id):
-    specific_product = get_object_or_404(products,id=id)
+def product_view(request,slug):
+    specific_product = get_object_or_404(products,slug=slug)
     related_product = products.objects.filter(Material__icontains=specific_product.Material)
 
    

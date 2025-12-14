@@ -7,6 +7,7 @@ from django_resized import ResizedImageField
 class category(models.Model):
     Category_Name = models.CharField(null=False, max_length=50, unique=True)
     Category_Image = models.ImageField(null=False,upload_to='static/media/category')
+    slug = models.SlugField(default="",null=False)
 
     class Meta:
         verbose_name = "category"
@@ -20,6 +21,7 @@ class category(models.Model):
 class products(models.Model):
     category = models.ForeignKey(category,on_delete= models.CASCADE)
     Product_Image = ResizedImageField(quality = 80,upload_to='static/media/product', force_format='WEBP')
+    Brand = models.CharField(null=True,blank=True,max_length=50)
     Color = models.CharField(null=True,blank=True,max_length=50)
     Model_No = models.CharField(max_length=50, null=False, unique=True)
     Size = models.CharField(null=False)
@@ -28,7 +30,7 @@ class products(models.Model):
     Price = models.FloatField(null=True, blank=True,max_length=10)
     Thickness = models.CharField(null=True, blank=True,max_length=10)
     Description = models.TextField(blank=True,max_length=100)
-
+    slug = models.SlugField(default="",null=False)
 
 
 

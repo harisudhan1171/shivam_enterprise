@@ -39,7 +39,7 @@
     <div class="overflow-control">
       <div class="slider-track" id="sliderTrack">
         {% for object in all_category %}
-        <a href="{% url 'category' object.id %}" class="slide">
+        <a href="{% url 'category' object.slug %}" class="slide">
               <img src="{{ object.Category_Image.url }}" alt="category image">
               <h3>{{object.Category_Name}}</h3>
           </a>
