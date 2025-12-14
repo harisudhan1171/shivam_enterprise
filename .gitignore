@@ -1,5 +1,6 @@
 #virtual environment 
 workspace/
 media/
+.env
 __pycache__/
 *.pyc

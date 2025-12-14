@@ -2,7 +2,6 @@ from django.shortcuts import HttpResponse, render,get_object_or_404
 from django.template import loader
 from store.models import *
 from django.db.models import Q
-from django.contrib import messages
 
 
 def home_view(request):
