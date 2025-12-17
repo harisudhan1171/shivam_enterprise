@@ -5,7 +5,7 @@
     <div class="product-view-container">
         <div class="product-display-section">
             <div class="product-item">
-                <img class="product-image" src="{{ specific_product.Product_Image.url }}" alt="product image">
+                <img  class="product-image" src="{{ specific_product.Product_Image.url }}" alt="product image">
                 <div class="product-spec">
                     
                     <div class="product-spec-title">{{ specific_product.Model_No }}</div>                          <!--Model no-->
@@ -53,7 +53,7 @@
         <div class="related-products">
             <div class="shop-search">
                 {% for object in related_products %}
-                    <a href="{% url 'product-view' object.id %}" class="shop-item">
+                    <a href="{% url 'product-view' object.slug %}" class="shop-item">
                         <img  src="{{ object.Product_Image.url }}" alt="image">
                         <div class="item-spec">
                            <p>Model no : {{ object.Model_No }}</p>

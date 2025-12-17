@@ -8,7 +8,7 @@
     <div class="gallery">
         {% for object in gallerymodel %}
         <div class="gallery-item">
-            <a href="{{object.image_file.url}}"><img loading="lazy" src="{{ object.image_file.url }}" alt="image" /></a>
+            <a href="{{object.image_file.url}}"><img  src="{{ object.image_file.url }}" alt="image" /></a>
         </div>
         {% endfor %}
     </div>
