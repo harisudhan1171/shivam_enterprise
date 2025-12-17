@@ -28,8 +28,8 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = env.bool("DEBUG", default=False)
 
 
-ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['*']
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+
 
 
 # Application definition
@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'django_cleanup.apps.CleanupConfig',
     'main',
     'store',
-    'whitenoise.runserver_nostatic',
 ]
 
 JAZZMIN_SETTINGS = {
@@ -148,8 +147,8 @@ USE_TZ = True
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-#whitenoise static files
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STATICFILES_DIRS = [BASE_DIR/'static',]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 
