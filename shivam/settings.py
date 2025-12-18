@@ -28,7 +28,7 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = env.bool("DEBUG", default=True)
 
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh','127.0.0.1',]
 
 
 # Application definition
@@ -152,6 +152,7 @@ STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [BASE_DIR/'static',]
 STATIC_ROOT = BASE_DIR/'staticfiles'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
