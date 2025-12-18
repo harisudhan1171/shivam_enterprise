@@ -58,6 +58,9 @@ JAZZMIN_SETTINGS = {
     ],
 }
 
+WHITENOISE_MIMETYPES = {
+    ".webp":"images/webp",
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
