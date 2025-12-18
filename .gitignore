@@ -1,8 +1,6 @@
 #virtual environment 
 workspace/
 
-# media files upload by user
-media/
 
 # enviroment variable
 .env
@@ -11,8 +9,6 @@ ENV/
 
 #cache files
 __pycache__/
-*.py[cod]
-*$py.class
 
 # vs code directory
 .vscode/
