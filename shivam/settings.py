@@ -28,8 +28,8 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = env.bool("DEBUG", default=False)
 
 
-ALLOWED_HOSTS = ['*','.onrender.com']
-
+ALLOWED_HOSTS = ['*','.onrender.com','https://shivam-enterprise.onrender.com']
+CSRF_TRUSTED_ORIGINS = ["https://shivam-enterprise.onrender.com"]
 
 # Application definition
 
