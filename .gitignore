@@ -1,7 +1,15 @@
 #virtual environment 
 workspace/
+
+# media files upload by user
 media/
+
+# enviroment variable
 .env
+
+#cache files
 __pycache__/
 *.pyc
+
+# vs code directory
 .vscode/
