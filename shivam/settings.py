@@ -28,7 +28,7 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = env.bool("DEBUG", default=True)
 
 
-ALLOWED_HOSTS = ['*','.vercel.app', '.now.sh',]
+ALLOWED_HOSTS = []
 
 
 # Application definition
