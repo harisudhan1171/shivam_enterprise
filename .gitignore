@@ -6,10 +6,13 @@ media/
 
 # enviroment variable
 .env
+venv/
+ENV/
 
 #cache files
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
 
 # vs code directory
 .vscode/
