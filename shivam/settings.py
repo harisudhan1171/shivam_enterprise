@@ -4,6 +4,8 @@ import os
 import environ
 from decouple import config
 import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 
 
@@ -116,10 +118,10 @@ DATABASES = {
         'PORT': config("DATABASE_PORT"),
     }
 }
-cloudinary.config = {
-    'CLOUD_NAME' :config('CLOUD_NAME'),
-    'API_KEY' :config('API_KEY'),
-    'API_SECRET' :config('API_SECRET'),
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'CLOUD_NAME',
+    'API_KEY': 'API_KEY',
+    'API_SECRET': 'API_SECRET'
 }
 
 
