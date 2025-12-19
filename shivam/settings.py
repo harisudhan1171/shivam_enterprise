@@ -119,9 +119,9 @@ DATABASES = {
     }
 }
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'CLOUD_NAME',
-    'API_KEY': 'API_KEY',
-    'API_SECRET': 'API_SECRET'
+    'CLOUD_NAME': config('CLOUD_NAME'),
+    'API_KEY': ('API_KEY'),
+    'API_SECRET': ('API_SECRET'),
 }
 
 
