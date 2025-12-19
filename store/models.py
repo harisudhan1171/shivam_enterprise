@@ -1,12 +1,11 @@
 from django.db import models
-from django_resized import ResizedImageField
-
+from cloudinary.models import CloudinaryField
 
 
 
 class category(models.Model):
     Category_Name = models.CharField(null=False, max_length=50, unique=True)
-    Category_Image = models.ImageField(null=False,upload_to='media/categoryImage')
+    Category_Image = CloudinaryField('image')
     slug = models.SlugField(default="",null=False)
 
     class Meta:
@@ -20,7 +19,7 @@ class category(models.Model):
 
 class products(models.Model):
     category = models.ForeignKey(category,on_delete= models.CASCADE)
-    Product_Image = models.ImageField(upload_to='media/productImage')
+    Product_Image = CloudinaryField('image')
     Brand = models.CharField(null=True,blank=True,max_length=50)
     Color = models.CharField(null=True,blank=True,max_length=50)
     Model_No = models.CharField(max_length=50, null=False, unique=True)
@@ -43,7 +42,7 @@ class products(models.Model):
     
 
 class GalleryAlbum(models.Model):
-    image_file = ResizedImageField(quality = 90, upload_to = 'gallery_images', force_format = 'WEBP')
+    image_file = CloudinaryField('image')
     upload_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
