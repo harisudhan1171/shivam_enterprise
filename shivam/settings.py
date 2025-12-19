@@ -35,6 +35,8 @@ CSRF_TRUSTED_ORIGINS = ["https://shivam-enterprise.onrender.com"]
 
 INSTALLED_APPS = [
     'jazzmin',
+    'cloudinary_storage',
+    'cloudinary',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,7 +47,15 @@ INSTALLED_APPS = [
     'main',
     'store',
 ]
+# cloudinary storage
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME' :config('CLOUD_NAME'),
+    'API_KEY' :config('API_KEY'),
+    'API_SECRET' :config('API_SECRET'),
+}
+#jazzmine ui
 JAZZMIN_SETTINGS = {
     "site_title": "Shivam Enterprise",
     "site_brand": "Shivam Enterprise",
@@ -58,9 +68,6 @@ JAZZMIN_SETTINGS = {
     ],
 }
 
-WHITENOISE_MIMETYPES = {
-    ".webp":"images/webp",
-}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
