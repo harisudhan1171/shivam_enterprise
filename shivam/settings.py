@@ -3,6 +3,7 @@ from pathlib import Path
 import os 
 import environ
 from decouple import config
+import cloudinary
 
 
 
@@ -50,11 +51,7 @@ INSTALLED_APPS = [
 # cloudinary storage
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME' :config('CLOUD_NAME'),
-    'API_KEY' :config('API_KEY'),
-    'API_SECRET' :config('API_SECRET'),
-}
+
 #jazzmine ui
 JAZZMIN_SETTINGS = {
     "site_title": "Shivam Enterprise",
@@ -118,6 +115,11 @@ DATABASES = {
         'HOST': config("DATABASE_HOST"),
         'PORT': config("DATABASE_PORT"),
     }
+}
+cloudinary.config = {
+    'CLOUD_NAME' :config('CLOUD_NAME'),
+    'API_KEY' :config('API_KEY'),
+    'API_SECRET' :config('API_SECRET'),
 }
 
 
