@@ -3,6 +3,7 @@ from cloudinary.models import CloudinaryField
 
 
 
+
 class category(models.Model):
     Category_Name = models.CharField(null=False, max_length=50, unique=True)
     Category_Image = CloudinaryField('image')

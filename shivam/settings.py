@@ -25,7 +25,7 @@ SECRET_KEY = config("SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool("DEBUG", default=False)
+DEBUG = env.bool("DEBUG", default=True)
 
 
 ALLOWED_HOSTS = ['*','.onrender.com','https://shivam-enterprise.onrender.com']
@@ -35,8 +35,8 @@ CSRF_TRUSTED_ORIGINS = ["https://shivam-enterprise.onrender.com"]
 
 INSTALLED_APPS = [
     'jazzmin',
-    'cloudinary_storage',
     'cloudinary',
+    'cloudinary_storage',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -153,8 +153,8 @@ USE_TZ = True
 
 #media files
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#MEDIA_URL = '/media/'
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Static files (CSS, JavaScript, Images)
