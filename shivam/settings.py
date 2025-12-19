@@ -28,7 +28,7 @@ SECRET_KEY = config("SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool("DEBUG", default=True)
+DEBUG = env.bool("DEBUG", default=False)
 
 
 ALLOWED_HOSTS = ['*','.onrender.com','https://shivam-enterprise.onrender.com']
@@ -118,12 +118,12 @@ DATABASES = {
         'PORT': config("DATABASE_PORT"),
     }
 }
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': config('CLOUD_NAME'),
-    'API_KEY': ('API_KEY'),
-    'API_SECRET': ('API_SECRET'),
-}
 
+cloudinary.config(
+    cloud_name=config('CLOUD_NAME'),
+    api_key=config('API_KEY'),
+    api_secret=config('API_SECRET'),
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
