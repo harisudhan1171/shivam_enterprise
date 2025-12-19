@@ -1,11 +1,11 @@
 #virtual environment 
 workspace/
-
+venv/
 
 # enviroment variable
 .env
-venv/
-ENV/
+
+
 
 #cache files
 __pycache__/
