@@ -20,13 +20,13 @@
 .product-image{
     border-radius: 5px;
     width: 30%;
-    aspect-ratio: 4 / 7;
+    aspect-ratio: 4 / 8;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     height: auto;
     display: block;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.8s ease-out;
 }
 .product-image:hover{
     transform: scale(1.02);

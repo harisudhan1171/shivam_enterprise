@@ -37,7 +37,8 @@ def product_search(request):
     
     if request.method =='GET':
         user_request = request.GET.get('search_input')
-        searched_product = products.objects.filter(Q(Model_No__iexact= user_request) | Q(Material__iexact = user_request))
+        text = user_request.replace(" ","")
+        searched_product = products.objects.filter(Q(Model_No__iexact= text) | Q(Material__iexact = text) |Q(slug__iexact = text))
         products_list = products.objects.all()
         template = loader.get_template('shop.html')
         context = {
