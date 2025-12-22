@@ -8,7 +8,7 @@ venv/
 
 
 #cache files
-__pycache__
+__pycache__/
 
 # vs code directory
 .vscode/

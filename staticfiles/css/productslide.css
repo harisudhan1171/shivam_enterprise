@@ -1,0 +1,124 @@
+.slider-container {
+    font-family: var(--serif);
+        display: flex;
+        justify-content: center;
+        max-width: 100%;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        background: #fff;
+        border-radius: 10px;
+        padding: 0 20px;
+        scroll-behavior: smooth;
+        scroll-snap-type: mandatory;
+    
+    }
+    .featured-product-title{
+        color: #e67e22;
+        font-size: clamp(2rem , 2vw, 3rem);
+        font-family: var(--serif);
+        text-align: center;
+    }
+    .overflow-control{
+        width: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+    .overflow-control::-webkit-scrollbar{
+        display: none;
+    }
+    .slider-track {
+        width: 100%;
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+        border-radius: 15px;
+        width: 300px;
+        box-sizing: border-box;
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.2s ease-in-out;
+    }
+    .slide:hover{
+        transform: scale(1.02);
+    }
+
+    .slide img {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .slide h3 {
+        color: black;
+        margin: 10px 0 5px;
+    }
+
+    .slide p {
+        color: #555;
+    }
+
+    /* Navigation buttons */
+    .prev, .next {
+        align-items: center;
+        text-align: center;
+        z-index: 3;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: transparent;
+        color: black;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 50%;
+        font-size: 18px;
+    }
+
+    .prev { left: 10px; }
+    .next { right:10px; }
+    .explore{
+        color: blue;
+        cursor: pointer;
+        font-family: var(--serif);
+        padding: 0 20px 0 50px ;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    a{
+        text-decoration: none;
+        margin: 0;
+    }
+    }
+    .explore h2{
+        color: brown;
+        font-size: clamp(1.5rem, 2vw, 2rem);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+        .explore{
+            padding: 10px 0 0 0;
+            flex-direction: column;
+        }
+
+        .slide {
+            min-width: 250px;
+        }
+        .explore{
+            justify-content: center;
+        }
+    }
+    @media (max-width: 600px){
+
+        .slider-container{
+            width: 80%;
+            justify-content: center;
+        }
+        .slide {
+            min-width: 100%;
+        }
+    }

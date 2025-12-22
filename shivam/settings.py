@@ -4,8 +4,7 @@ import os
 import environ
 from decouple import config
 import cloudinary
-import cloudinary.uploader
-import cloudinary.api
+
 
 
 
@@ -46,7 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_cleanup.apps.CleanupConfig',
     'main',
     'store',
 ]
