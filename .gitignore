@@ -5,7 +5,7 @@ venv/
 # enviroment variable
 .env
 
-
+media/
 
 #cache files
 __pycache__/

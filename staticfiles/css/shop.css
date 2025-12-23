@@ -59,6 +59,7 @@ h2{
     text-align: center;
     font-size:clamp(1rem, 1vw, 3rem);
     font-family: var(--serif);
+    font-weight: bold;
 }
 .searchbar{
     min-width: 300px;
@@ -115,7 +116,7 @@ h2{
 }
 .shop-search{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
     gap: 1.5rem;
     padding: 2rem;
 }
