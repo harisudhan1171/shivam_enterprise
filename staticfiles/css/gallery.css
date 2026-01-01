@@ -15,7 +15,7 @@
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 400px));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 2fr));
   gap: 1.5rem;
   padding: 2rem;
 }
@@ -24,7 +24,7 @@
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  transition: transform 0.8s ease;
 }
 
 .gallery-item:hover {
@@ -34,6 +34,7 @@
 .gallery-item img {
   aspect-ratio: 14 / 9 ;
   width: 100%;
+  object-fit: cover;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

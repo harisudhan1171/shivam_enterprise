@@ -24,9 +24,11 @@ def gallery(request):
     return HttpResponse(template.render(context))
 
 def category_view(request,slug):
+    categories = category.objects.all()
     get_id = get_object_or_404(category,slug=slug)
     get_product_by_category = products.objects.filter(category_id__exact = get_id)
     context = {
+        'category_list': categories,
         'pro_by_cat' : get_product_by_category,
     }
     template = loader.get_template('shop.html')
@@ -38,7 +40,7 @@ def product_search(request):
     if request.method =='GET':
         user_request = request.GET.get('search_input')
         text = user_request.replace(" ","")
-        searched_product = products.objects.filter(Q(Model_No__iexact= text) | Q(Material__iexact = text) |Q(slug__iexact = text))
+        searched_product = products.objects.filter(Q(Model_No__iexact= text) | Q(Material__iexact = text) |Q(slug__iexact = text) )
         products_list = products.objects.all()
         template = loader.get_template('shop.html')
         context = {
@@ -71,9 +73,12 @@ def product_view(request,slug):
         
     
 def shop_view(request):
+    categories = category.objects.all()
     products_list = products.objects.all()
+    
     context = {
         'products': products_list,
+        'category_list': categories,
     }
     template = loader.get_template('shop.html')
     return HttpResponse(template.render(context))

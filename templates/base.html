@@ -23,16 +23,20 @@
 </head>
 <body >
 <header>
+  <!--Navbar-->
     <nav class="c-navbar">
+      <!--Hamburger icon-->
         <div class="c-hamburger">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
+        <!--shivam enterprise logo-->
         <div class="c-brand">
             <img loading="lazy" src="{% static 'images\logo.svg' %}" alt="logo" height="35px" width="128px">
 
         </div>  
+        <!--Navbar links-->
         <ul class="c-nav-links">
             <li><i class="fa-solid fa-house"></i><a href="{% url 'home' %}">Home</a></li>
             <li><i class="fa-solid fa-cart-shopping"></i><a href="{% url 'shop' %}">Shop</a></li>
@@ -44,9 +48,11 @@
     </nav>
  
 </header>
-{% block content %}
 
+{% block content %}
+  <!--contents from the other template that shows in inside this block-->
 {% endblock %}
+<!--footer section-->
 <footer class="text-white text-center text-lg-start container-fluid" style="background-color: #000000;">
 
     <div class="container p-4">

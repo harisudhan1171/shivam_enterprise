@@ -4,10 +4,11 @@
 
 {% block content %}
 <div class="gallery-container">
-    <h1>Gallery</h1>
+    <h1>Gallery</h1><!--heading-->
     <div class="gallery">
         {% for object in gallerymodel %}
         <div class="gallery-item">
+            <!--images iterated from the object variable and displays them -->
             <a href="{{object.image_file.url}}"><img  src="{{ object.image_file.url }}" alt="image" /></a>
         </div>
         {% endfor %}

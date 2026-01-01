@@ -137,7 +137,19 @@ h2{
     background-color: transparent;
     margin: 10px 0 0 30px;
 }
-
+.category-section{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.back-arrow{
+    font-family: var(--serif);
+    display: flex;
+    padding: 15px;
+    justify-content: space-between;
+}
 @media(max-width:600px){
     .shop{
         grid-template-columns: repeat(auto-fit,minmax(110px,1fr));
