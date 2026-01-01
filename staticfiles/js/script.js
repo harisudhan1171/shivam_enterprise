@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function openWhatsApp() { 
-  const phone = "+918667486352";
+  const phone = "+917598090156";
    const message = encodeURIComponent("Hi, I need assistance!"); 
    window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
 }
