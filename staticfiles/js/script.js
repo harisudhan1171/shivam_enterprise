@@ -1,3 +1,7 @@
+//year
+const year = new Date()
+
+document.getElementById("current-year").textContent = year.toLocalString();
 //hamburger menu
 const hamburger = document.querySelector(".c-hamburger")
 const navlink = document.querySelector(".c-nav-links")
